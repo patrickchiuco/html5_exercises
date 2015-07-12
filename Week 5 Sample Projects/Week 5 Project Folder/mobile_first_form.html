@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD//HTML 4.01//EN">-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Domburg University Audition Form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/project.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+
+
+    </script>
+  </head>
+  <body class="container">
+    <header><h1 class="offscreen">University of Domburg Department of Music and Dance</h1></header>
+      <div class="hidden-xs col-md-2">
+      </div>
+      <main class="col-xs-12 col-md-8">
+        <header><h2 class="text-center">Audition Form</h2></header>
+        <h3 class="offscreen">General Information</h3>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <fieldset>
+              <legend>General Information:</legend>
+              <div class="row">
+                <div class="col-xs-12">
+                  <label for="full-name" class="control-label">Name:</label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-user"></span>
+                    </div>
+                    <input id="full-name" type="text" class="form-control" title="Please place your name in the following format: Last, First, Middle"
+                    placeholder="Surname, First Name, Middle Name" required="required"/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="address-street" class="control-label">Address:</label>
+                    <input id="address-street" type="text" class="form-control" title="Street address here" placeholder="Street address here" required/>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="address-city" class="control-label">City:</label>
+                    <input id="address-city" type="text" class="form-control" title="Enter your city" placeholder="City here" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="address-state" class="control-label">State:</label>
+                    <input id="address-state" type="text" class="form-control" title="State's name here" placeholder="State Here" required/>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="zipcode" class="control-label">Zip code</label>
+                    <input id="zipcode" type="number" placeholder="XXXXX" title="Zipcode here (XXXXX)" pattern="[0-9]{5}"
+                    class="form-control" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="address-state" class="control-label">State:</label>
+                    <input id="address-state" type="text" class="form-control" title="State's name here" placeholder="State Here" required/>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="zipcode" class="control-label">Zip code</label>
+                    <input id="zipcode" type="number" placeholder="XXXXX" title="Zipcode here (XXXXX)" pattern="[0-9]{5}"
+                    class="form-control" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="address-state" class="control-label">State:</label>
+                    <input id="address-state" type="text" class="form-control" title="State's name here" placeholder="State Here" required/>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="zipcode" class="control-label">Zip code</label>
+                    <input id="zipcode" type="number" placeholder="XXXXX" title="Zipcode here (XXXXX)" pattern="[0-9]{5}"
+                    class="form-control" required/>
+                  </div>
+                </div>
+              </div>
+              <fieldset>
+                    <legend>Will you need an accompanist?</legend>
+                    <label for="accompanist-yes" class="radio-inline col-xs-push-1" id="accom-yes-label">
+                      <input type="radio" id="accompanist-yes" name="q-accompanist"/> Yes
+                    </label>
+                    <label for="accompanist-no" class="radio-inline col-xs-push-2" id="accom-no-label">
+                      <input type="radio" id="accompanist-no" name="q-accompanist"/> No
+                    </label>
+              </fieldset>
+              <div class="row">
+                <div class="col-xs-12">
+                  <fieldset>
+                    <legend>Degree program for which you are auditioning:</legend>
+
+                    <ul class="list-unstyled">
+                      <li>
+                        <label for="jazz-stud" class="checkbox-inline">
+                          Bachelor of Arts Jazz Studies
+                        </label>
+                        <input type="checkbox" id="jazz-stud"/>
+                      </li>
+                      <li>
+                        <label for="music-tech-and-biz" class="checkbox-inline">
+                          <input type="checkbox" id="music-tech-and-biz"/> Bachelor of Arts Music Technology and Business
+                        </label>
+                      </li>
+                      <li>
+                        <label for="performance-classical" class="checkbox-inline">
+                          <input type="checkbox" id="performance-classical"/> Bachelor of Arts Performance (Classical)
+                        </label>
+                      </li>
+                      <li>
+                        <label for="history-and-literature" class="checkbox-inline">
+                          <input type="checkbox" id="history-and-literature"/> Bachelor of Arts Music History and Literature
+                        </label>
+                      </li>
+                      <li>
+                        <label for="theory-and-compo" class="checkbox-inline">
+                           <input type="checkbox" id="theory-and-compo"/> Bachelor of Arts Music Theory and Composition
+                        </label>
+                      </li>
+                      <li>
+                        <label for="music-ed" class="checkbox-inline">
+                           <input type="checkbox" id="music-ed"/> Bachelor of Science in Music Education (College of Education and Social Services)
+                        </label>
+                      </li>
+                    </ul>
+                </fieldset>
+                </div>
+                </div>
+            </fieldset>
+          </div>
+          <div class="form-group">
+            <h3 class="offscreen">Music Background:</h3>
+            <fieldset>
+              <legend>Music Background</legend>
+              <div>
+                <h4>Ensembles:</h4>
+              </div>
+              <div>
+                <h4>Private Lessons:</h4>
+              </div>
+              <div>
+                <h4>Other Musical Skills:</h4>
+              </div>
+            </fieldset>
+          </div>
+          <div class="form-group">
+            <h3 class="offscreen">Honors and Awards</h3>
+            <div>
+            </div>
+          </div>
+        </form>
+      </main>
+      <div class="hidden-xs col-md-2">
+        <aside>
+          <header><h3>Additional Info:</h3></header>
+          Please upload the following:
+          <ul id="add-info">
+            <li>Examples of past repertoire.</li>
+            <li>Letter of recommendation from a current or former music teacher.</li>
+          </ul>
+        </aside>
+      </div>
+  </body>
+</html>

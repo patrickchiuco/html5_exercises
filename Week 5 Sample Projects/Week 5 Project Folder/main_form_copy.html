@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD//HTML 4.01//EN">-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Domburg University Audition Form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/project.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/project.js"></script>
+  </head>
+  <body class="container" onload="init()">
+    <header><h1 class="offscreen">University of Domburg Department of Music and Dance</h1></header>
+      <div class="hidden-xs col-md-2">
+      </div>
+      <main class="col-xs-12 col-md-8">
+        <header><h2 class="text-center">Audition Form</h2></header>
+        <h3 class="offscreen">General Information</h3>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <fieldset>
+              <legend>General Information:</legend>
+              <div class="row">
+                <div class="col-xs-12">
+                  <label for="full-name" class="control-label">Name:</label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-user"></span>
+                    </div>
+                    <input id="full-name" type="text" class="form-control" title="Please place your name in the following format: Last, First, Middle"
+                    placeholder="Surname, First Name, Middle Name" required="required"/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="address-street" class="control-label">Address:</label>
+                    <input id="address-street" type="text" class="form-control" title="Street address here" placeholder="Street address here" required/>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="address-city" class="control-label">City:</label>
+                    <input id="address-city" type="text" class="form-control" title="Enter your city" placeholder="City here" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="address-state" class="control-label">State:</label>
+                    <input id="address-state" type="text" class="form-control" title="State's name here" placeholder="State Here" required/>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="zipcode" class="control-label">Zip code</label>
+                    <input id="zipcode" type="number" placeholder="XXXXX" title="Zipcode here (XXXXX)" pattern="[0-9]{5}"
+                    class="form-control" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="contact-phone" class="control-label">Phone:</label>
+                    <input id="contact-phone" type="tel" class="form-control" title="Please follow the format XXX-XXX-XXXX"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="XXX-XXX-XXXX" required/>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="contact-email" class="control-label">Email:</label>
+                    <input id="contact-email" type="email" placeholder="johndo@gmail.com" title="Please enter a valid email."
+                    class="form-control" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="instrument-voice" class="control-label">Instrument/Voice:</label>
+                    <input id="instrument-voice" type="text" class="form-control" title="Please type your voice type or instrument" placeholder="Voice type or instrument" list="instrument-voice-list" required/>
+                    <datalist id="instrument-voice-list">
+                      <optgroup label="Female Voices">
+                        <option>Contralto</option>
+                        <option>Mezzo-Soprano</option>
+                        <option>Soprano</option>
+                      </optgroup>
+                      <optgroup label="Male Voices">
+                        <option>Bass</option>
+                        <option>Baritone</option>
+                        <option>Tenor</option>
+                        <option>Coutertenor</option>
+                      </optgroup>
+                      <optgroup label="Stringed">
+                        <option>Double Bass</option>
+                        <option>Cello</option>
+                        <option>Viola</option>
+                        <option>Violin</option>
+                      </optgroup>
+                      <option>Other</option>
+                    </datalist>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <div class="input-group">
+                    <label for="birthdate" class="control-label">Date of Birth:</label>
+                    <input id="birthdate" type="date" title="Please place your birthdate in mm/dd/yyyy format" pattern="[0-9]{5}"
+                    class="form-control" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <label class="control-label" for="repertoire">Please list the pieces (and composers) you have prepared for this audition:</label>
+                    <textarea id="repertoire" required class="form-control" placeholder="Please follow the format: Piece name - Composer name. Press shift+enter to go to the next line."></textarea>
+                </div>
+              </div>
+              <fieldset>
+                    <legend>Will you need an accompanist?</legend>
+                    <label for="accompanist-yes" class="radio-inline" id="accom-yes-label">
+                      <input type="radio" id="accompanist-yes" name="q-accompanist"/> Yes
+                    </label>
+                    <label for="accompanist-no" class="radio-inline" id="accom-no-label">
+                      <input type="radio" id="accompanist-no" name="q-accompanist"/> No
+                    </label>
+              </fieldset>
+              <div class="row">
+                <div class="col-xs-12">
+                  <fieldset>
+                    <legend>Degree program for which you are auditioning:</legend>
+                    <ul class="list-unstyled">
+                      <li>
+                        <label for="jazz-stud" class="checkbox-inline">
+                          <input type="checkbox" id="jazz-stud"/> Bachelor of Arts Jazz Studies
+                        </label>
+                      </li>
+                      <li>
+                        <label for="music-tech-and-biz" class="checkbox-inline">
+                          <input type="checkbox" id="music-tech-and-biz"/> Bachelor of Arts Music Technology and Business
+                        </label>
+                      </li>
+                      <li>
+                        <label for="performance-classical" class="checkbox-inline">
+                          <input type="checkbox" id="performance-classical"/> Bachelor of Arts Performance (Classical)
+                        </label>
+                      </li>
+                      <li>
+                        <label for="history-and-literature" class="checkbox-inline">
+                          <input type="checkbox" id="history-and-literature"/> Bachelor of Arts Music History and Literature
+                        </label>
+                      </li>
+                      <li>
+                        <label for="theory-and-compo" class="checkbox-inline">
+                           <input type="checkbox" id="theory-and-compo"/> Bachelor of Arts Music Theory and Composition
+                        </label>
+                      </li>
+                      <li>
+                        <label for="music-ed" class="checkbox-inline">
+                           <input type="checkbox" id="music-ed"/> Bachelor of Science in Music Education (College of Education and Social Services)
+                        </label>
+                      </li>
+                      <li>
+                        <label for="audition-other" class="checkbox-inline">
+                           <input type="checkbox" id="audition-other"/> Other
+                        </label>
+                        <label for="other-description" class="form-label offscreen">Please describe: </label>
+                        <input id="other-description" type="text" class="audition-other form-control" placeholder="Please describe">
+
+                      </li>
+                      <li>
+
+
+                      </li>
+                    </ul>
+                  </fieldset>
+                </div>
+                </div>
+            </fieldset>
+          </div>
+          <div class="form-group">
+            <h3 class="offscreen">Music Background:</h3>
+            <fieldset>
+              <legend>Music Background</legend>
+              <div>
+                <h4>Ensembles:</h4>
+                <!-- Orchestra-->
+                <div class="row">
+                  <div class="col-xs-6">
+                    <label for="orchestra" class="control-label">
+                      <input type="checkbox" id="orchestra" onchange="showYears('orchestra')"> Orchestra
+                    </label>
+                  </div>
+                  <div id="years-orchestra" class="hidden-xs hidden-sm hidden-md hidden-lg">
+                    <label for="mback-orchestra-years" class="control-label">Number of Years</label>
+                    <input type="number" min="1" max="90" value="1" id="mback-orchestra-years">
+                  </div>
+                </div>
+                <!-- Concert Band/ Wind Ensemble-->
+                <div class="row">
+                  <div class="col-xs-6">
+                    <label for="concert-wind" class="control-label">
+                      <input type="checkbox" id="concert-wind" onchange="showYears('concert-wind')"> Concert Band/ Wind Ensemble
+                    </label>
+                  </div>
+                  <div id="years-concert-wind" class="hidden-xs hidden-sm hidden-md hidden-lg">
+                    <label for="mback-concert-wind-years" class="control-label">Number of Years</label>
+                    <input type="number" min="1" max="90" value="1" id="mback-concert-wind-years">
+                  </div>
+                </div>
+                <!-- Choir-->
+                <div class="row">
+                  <div class="col-xs-6">
+                    <label for="choir" class="control-label">
+                      <input type="checkbox" id="choir" onchange="showYears('choir')"> Choir
+                    </label>
+                  </div>
+                  <div id="years-choir" class="hidden-xs hidden-sm hidden-md hidden-lg">
+                    <label for="mback-choir-years" class="control-label">Number of Years</label>
+                    <input type="number" min="1" max="90" value="1" id="mback-choir-years">
+                  </div>
+                </div>
+                <!-- Jazz Big Band/ Combo -->
+                <div class="row">
+                  <div class="col-xs-6">
+                    <label for="jazz-band" class="control-label">
+                      <input type="checkbox" id="jazz-band" onchange="showYears('jazz-band')"> Jazz Big Band/Combo
+                    </label>
+                  </div>
+                  <div id="years-jazz-band" class="hidden-xs hidden-sm hidden-md hidden-lg">
+                    <label for="mback-jazz-band-years" class="control-label">Number of Years</label>
+                    <input type="number" min="1" max="90" value="1" id="mback-jazz-band-years">
+                  </div>
+                </div>
+                <!-- Chamber Music -->
+                <div class="row">
+                  <div class="col-xs-6">
+                    <label for="chamber-music" class="control-label">
+                      <input type="checkbox" id="chamber-music" onchange="showYears('chamber-music')"> Chamber Music
+                    </label>
+                  </div>
+                  <div id="years-chamber-music" class="hidden-xs hidden-sm hidden-md hidden-lg">
+                    <label for="mback-chamber-music-years" class="control-label">Number of Years</label>
+                    <input type="number" min="1" max="90" value="1" id="mback-chamber-music-years">
+                  </div>
+                </div>
+                <!-- Percussion Ensemble -->
+                <div class="row">
+                  <div class="col-xs-6">
+                    <label for="percussion" class="control-label">
+                      <input type="checkbox" id="percussion" onchange="showYears('percussion')"> Percussion Ensemble
+                    </label>
+                  </div>
+                  <div id="years-percussion" class="hidden-xs hidden-sm hidden-md hidden-lg">
+                    <label for="mback-percussion-years" class="control-label">Number of Years</label>
+                    <input type="number" min="1" max="90" value="1" id="mback-percussion-years">
+                  </div>
+                </div>
+                <!-- Musical Theater or Opera -->
+                <div class="row">
+                  <div class="col-xs-6">
+                    <label for="theater-opera" class="control-label">
+                      <input type="checkbox" id="theater-opera" onchange="showYears('theater-opera')"> Musical Theater or Opera
+                    </label>
+                  </div>
+                  <div id="years-theater-opera" class="hidden-xs hidden-sm hidden-md hidden-lg">
+                    <label for="mback-theater-opera-years" class="control-label">Number of Years</label>
+                    <input type="number" min="1" max="90" value="1" id="mback-theater-opera-years">
+                  </div>
+                </div>
+                <!-- Other -->
+                <div class="row">
+                  <div class="col-xs-12 col-md-3">
+                    <label for="other" class="control-label">
+                      <input type="checkbox" id="other" onchange="showYears('other')"> Other
+                    </label>
+                  </div>
+                  <div class="col-xs-12 col-md-5">
+                    <label for="mback-other-desc" class="offscreen control-label" >Please describe</label>
+                    <input type="text" class="form-control" placeholder="Describe here" id="mback-other-desc"/>
+                  </div>
+                  <div id="years-other" class="hidden-xs hidden-sm hidden-md hidden-lg">
+                    <label for="mback-other-years" class="control-label">Number of Years</label>
+                    <input type="number" min="1" max="90" value="1" id="mback-other-years">
+                  </div>
+                </div>
+              <div>
+                <h4>Private Lessons:</h4>
+                <div class="row">
+                  <div class="col-xs-6 col-md-3">
+                    <label for="instrument-voice-item1">Instrument/Voice</label>
+                    <input id="instrument-voice-item1" type="text" list="instrument-voice" placeholder="Enter your voice type or instrument" class="form-control" title="Please type your voice type or instrument."/>
+                  </div>
+                  <div class="col-xs-6 col-md-3">
+                    <label for="years-item1">No. of Years:</label><br/>
+                    <input id="years-item1" type="number" min="1" max="90" value="1"/>
+                  </div>
+                  <div class="col-xs-12 col-md-3">
+                    <label for="teachers-name-item1">Teacher's Name</label>
+                    <input type="text" id="teachers-name-item1" placeholder="Type in your teacher's name" class="form-control" title="Please type in your teacher's full name"/>
+                  </div>
+                  <div class="col-xs-12 col-md-3">
+                    <label for="teachers-email-item1">Teacher's Email</label>
+                    <input type="email" id="teachers-email-item1" placeholder="Teacher's email" title="Please type in your teacher's email." class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6 col-md-3">
+                    <label for="instrument-voice-item2">Instrument/Voice</label>
+                    <input id="instrument-voice-item2" type="text" list="instrument-voice" placeholder="Enter your voice type or instrument" class="form-control" title="Please type your voice type or instrument."/>
+                  </div>
+                  <div class="col-xs-6 col-md-3">
+                    <label for="years-item2">No. of Years:</label><br/>
+                    <input id="years-item2" type="number" min="1" max="90" value="1"/>
+                  </div>
+                  <div class="col-xs-12 col-md-3">
+                    <label for="teachers-name-item2">Teacher's Name</label>
+                    <input type="text" id="teachers-name-item2" placeholder="Type in your teacher's name" class="form-control" title="Please type in your teacher's full name"/>
+                  </div>
+                  <div class="col-xs-12 col-md-3">
+                    <label for="teachers-email-item2">Teacher's Email</label>
+                    <input type="email" id="teachers-email-item2" placeholder="Teacher's email" title="Please type in your teacher's email." class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6 col-md-3">
+                    <label for="instrument-voice-item3">Instrument/Voice</label>
+                    <input id="instrument-voice-item3" type="text" list="instrument-voice" placeholder="Enter your voice type or instrument" class="form-control" title="Please type your voice type or instrument."/>
+                  </div>
+                  <div class="col-xs-6 col-md-3">
+                    <label for="years-item3">No. of Years:</label><br/>
+                    <input id="years-item3" type="number" min="1" max="90" value="1"/>
+                  </div>
+                  <div class="col-xs-12 col-md-3">
+                    <label for="teachers-name-item3">Teacher's Name</label>
+                    <input type="text" id="teachers-name-item3" placeholder="Type in your teacher's name" class="form-control" title="Please type in your teacher's full name"/>
+                  </div>
+                  <div class="col-xs-12 col-md-3">
+                    <label for="teachers-email-item3">Teacher's Email</label>
+                    <input type="email" id="teachers-email-item3" placeholder="Teacher's email" title="Please type in your teacher's email." class="form-control">
+                  </div>
+                </div>
+                <datalist id="instrument-voice">
+                </datalist>
+              </div>
+              <div>
+                <h4>Other Musical Skills:</h4>
+                  <fieldset>
+                    <legend>Do you play the piano?</legend>
+                    <div class="row">
+                      <div class="col-xs-6 col-md-push-1">
+                        <label class="radio-inline control-label" for="plays-piano"><input type="radio" id="plays-piano" name="plays-piano" onchange="yearsPlayingPiano()">Yes</label>
+                        <label class="radio-inline control-label" for="doesnt-play-piano"><input type="radio" id="doesnt-play-piano" name="plays-piano">No</label>
+                      </div>
+                      <div class="col-xs-6">
+                        <label for="plays-piano-years" class="control-form">Number of years</label>
+                        <input type="number" min="1" max="90" value="1" id="plays-piano-years"/>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset>
+                    <legend>Which clefs do you read fluently?</legend>
+                    <div class="row">
+                      <div class="col-xs-3 checkbox">
+                        <label for="treble" class="inline-checkbox control-label">
+                          <input type="checkbox" id="treble"> Treble
+                        </label>
+                      </div>
+                      <div class="col-xs-3 checkbox">
+                        <label for="bass" class="inline-checkbox control-label">
+                          <input type="checkbox" id="bass"> Bass
+                        </label>
+                      </div>
+                      <div class="col-xs-3 checkbox">
+                        <label for="alto" class="inline-checkbox control-label">
+                          <input type="checkbox" id="alto"> Alto
+                        </label>
+                      </div>
+                      <div class="col-xs-3 checkbox">
+                        <label for="tenor" class="inline-checkbox control-label">
+                          <input type="checkbox" id="tenor"> Tenor
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                      <fieldset class="radio">
+                        <legend>Have you taken a music theory course?</legend>
+                        <label for="theory-yes" class="radio-inline control-label">
+                          <input type="radio" id="theory-yes" name="theory-course"> Yes
+                        </label>
+                        <label for="theory-no" class="radio-inline control-label">
+                          <input type="radio" id="theory-no" name="theory-course"> No
+                        </label>
+                      </fieldset>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                      <fieldset class="radio">
+                        <legend>Have you composed a piece of music?</legend>
+                        <label for="composed" class="radio-inline control-label">
+                          <input id="has-composed-yes" type="radio" name="has-composed"> Yes
+                        </label>
+                        <label for="composed" class="radio-inline control-label">
+                          <input id="has-composed-no" type="radio" name="has-composed"> No
+                        </label>
+                      </fieldset>
+                    </div>
+                    <div class="col-xs-12">
+                      <label for="compo-background" class="control-label">Please describe your compositional background:</label>
+                      <textarea id="compo-background" title="Please type in your compositiona background" class="form-control" placeholder="Describe your compositional background"></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <fieldset>
+                        <legend>Please list any other instruments that you play</legend>
+                        <div class="row">
+                          <div class="col-xs-6">
+                            <label for="instrument-item1" class="control-label offscreen">Instrument 1:</label>
+                            <input type="text" title="Type the name of the instrument" placeholder="Instrument name here" id="instrument-item1" class="form-control">
+                          </div>
+                          <div class="col-xs-6">
+                            <label for="instrument-item1-years" class="control-label">Number of Years</label>
+                            <input type="number" min="1" max="90" value="1" id="instrument-item1-years">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6">
+                            <label for="instrument-item2" class="control-label offscreen">Instrument 2:</label>
+                            <input type="text" title="Type the name of the instrument" placeholder="Instrument name here" id="instrument-item2" class="form-control">
+                          </div>
+                          <div class="col-xs-6">
+                            <label for="instrument-item2-years" class="control-label">Number of Years</label>
+                            <input type="number" min="1" max="90" value="1" id="instrument-item1-years">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6">
+                            <label for="instrument-item3" class="control-label offscreen">Instrument 3:</label>
+                            <input type="text" title="Type the name of the instrument" placeholder="Instrument name here" id="instrument-item3" class="form-control">
+                          </div>
+                          <div class="col-xs-6">
+                            <label for="instrument-item3-years" class="control-label">Number of Years</label>
+                            <input type="number" min="1" max="90" value="1" id="instrument-item3-years">
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <label for="lang-training" class="control-form">If you are a singer, in what languages have you had training?</label>
+                      <textarea id="lang-training" title="Please type in the languages you had training in" placeholder="Type in the languages you had training in" class="form-control"></textarea>
+                    </div>
+                  </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="form-group">
+            <h3 class="offscreen">Applicant's Honors and Awards</h3>
+            <fieldset>
+              <legend>Honors and Awards</legend>
+            <div class="row">
+              <div class="col-xs-12">
+                <label for="musical-accomplishments" class="control-label">Please list any special musical accomplishments (district, all-state, or other music festivals, etc.).</label>
+                <textarea id="musical-accomplishments" class="form-control" placeholder="Please follow the follow format: Award - Institution - Date. Press shift+enter to go the next line."></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <label for="reasons" class="control-label">Please tell us why you are interested in majoring in music at the University of Domburg.</label>
+                <textarea id="reasons" class="form-control" placeholder="Please state your reason(s) here." required/></textarea>
+              </div>
+            </div>
+          </fieldset>
+          </div>
+        </form>
+      </main>
+      <div class="hidden-xs col-md-2">
+        <aside>
+          <header><h3>Additional Info:</h3></header>
+          Please upload the following:
+          <ul id="add-info">
+            <li>Examples of past repertoire.</li>
+            <li>Letter of recommendation from a current or former music teacher.</li>
+          </ul>
+        </aside>
+      </div>
+  </body>
+</html>

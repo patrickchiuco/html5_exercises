@@ -1,0 +1,27 @@
+.offscreen{
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+textarea{
+  resize: vertical;
+}
+
+#repertoire, #musical-accomplishments, #reasons,
+#lang-training, #compo-background{
+  height: 10em;
+}
+
+#other-description{
+  display: none;
+}
+
+#mback-other-desc{
+  display: none;
+}
