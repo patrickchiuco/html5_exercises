@@ -1,0 +1,71 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link rel="stylsheet" href="font-awesome/css/font-awesome.min.css"/>
+  <link rel="stylesheet"  href="css/project.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <h2 class="offscreen">NAVIGATION</h2>
+  <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="">
+          My Portfolio
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right" role="menu">
+        <li>
+          <a href="portfolio_page.html" class="">Portfolio</a>
+          <span class="sr-only">Portfolio</span>
+        </li>
+        <li>
+          <a href="about_page.html">About</a>
+          <span class="sr-only">About</span>
+        </li>
+        <li  class="active">
+          <a href="contact_page.html">Contact</a>
+          <span class="sr-only">Contact</span>
+        </li>
+      </ul>
+  </div>
+</nav>
+<body>
+  <h1 class="offscreen">CONTACT PAGE</h1>
+  <div class="hidden-xs col-md-3"></div>
+  <section class="col-xs-12 col-md-6">
+    <h2 class="text-center"> CONTACT ME</h2>
+    <hr class="site-logo text-center"></hr>
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <textarea id="contact-message" placeholder="Message" class="form-control" height="250px;"></textarea>
+      </div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirmation">Send</button>
+    </form>
+    <div class="modal fade" tabindex="-1" id="confirmation" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title" id="myModalLabel">Thanks! :)</h2>
+          </div>
+          <div class="modal-body">
+            Your message was sent to patrick.chiuco@gmail.com
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hidden-xs col-md-3"></div>
+</body>
+</html>

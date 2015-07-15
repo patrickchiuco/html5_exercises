@@ -1,0 +1,79 @@
+/* -------- General CSS styles -------- */
+@font-face{
+  font-family: FontAwesome;
+  src: url(../font-awesome/fonts/fontawesome-webfont.woff) format(woff),
+  url(../font-awesome/fonts/fontawesome-webfont.eot) format(embedded-opentype),
+  url(../font-awesome/fonts/fontawesome-webfont.ttf) format(truetype),
+  url(../font-awesome/fonts/fontawesome-webfont.svg) format(svg),
+  url(../font-awesome/fonts/FontAwesome.otf);
+}
+
+.offscreen{
+  position: absolute;
+  clip: rect(1px 1px 1px 1px); /* for Internet Explorer */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.site-logo{
+  position: relative;
+  width: 250px;
+  border-top: solid 5px;
+  text-align:center;
+}
+
+.site-logo:after{
+  position: relative;
+  font-family: 'FontAwesome';
+  display: inline-block;
+  content: '\f005';
+  font-size: 1.8em;
+  top: -0.8em;
+  background-color: #FFFFFF;
+  color: #000;
+  padding: 0 0.25em;
+}
+
+ul{
+  padding:0;
+}
+
+
+/* -------- Portfolio CSS styles -------- */
+.language-div ul, .tools-tech-div ul{
+  list-style-type: none;
+}
+
+#portfolio{
+  margin: 4% 0 2% 0;
+}
+
+.portfolio-sec-1{
+  margin: 3% 0 2% 0;
+}
+
+.portfolio-sec-2{
+margin: 2% 0 3% 0;
+}
+
+#skillset{
+  margin: 2% 0;
+}
+
+/* -------- About page articles -------- */
+
+.about-article{
+  padding: 2%;
+  font-family: 'FontAwesome';
+}
+
+/* -------- Contact page CSS -------- */
+
+#contact-message{
+  resize: none;
+  height: 150px;
+}
