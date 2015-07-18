@@ -25,3 +25,8 @@ textarea{
 #mback-other-desc{
   display: none;
 }
+
+#add-private-lesson-div,
+#add-other-instruments-div{
+  padding-top: 1%;
+}

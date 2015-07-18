@@ -45,7 +45,7 @@ function init(){
   compo_textarea = document.getElementById("compo-background-div");
 
   //Add and remove current lesson field by getting #private-lessons-div and adding fields using :after
-  current_plesson_field = 3;
+  current_plesson_field = 2;
   private_lesson_div = document.getElementById("private-lessons-div");
 
   //
@@ -57,7 +57,7 @@ function init(){
   input_type= ["text","number","text","email"];
 
   //
-  instrumentCounter = 3;
+  instrumentCounter = 1;
   instrumentFieldset = document.getElementById("instrument-list-fieldset");
 }
 
@@ -115,7 +115,7 @@ function addNewPrivateLessonField(){
   var inner_div_array = [];
   var label_array = [];
   var test_div = document.querySelector("#private-lessons-div");
-  current_plesson_field+=1;
+  current_plesson_field += 1;
   for(var i=0;i<4;i++){
     var new_div = document.createElement("div");
     var new_label = document.createElement("label");
@@ -150,14 +150,14 @@ function addNewPrivateLessonField(){
 
 function removeLatestPrivateLessonField(){
   var id = "new-item"+current_plesson_field
-  console.log(id);
   var currentItems = document.getElementById("new-item"+current_plesson_field);
-  if(current_plesson_field == 3){
-    console.log("Can't delete fields");
+  if(current_plesson_field == 2){
+    window.alert("Minimum number of fields is 2");
   }else{
     currentItems.remove();
+    current_plesson_field = current_plesson_field - 1;
   }
-  current_plesson_field-=1;
+
 }
 
 function addInstrument(){
@@ -178,9 +178,8 @@ function addInstrument(){
   var newYearsInput = document.createElement("input")
   var newYearsText = document.createTextNode("Number of Years:")
 
-
-  console.log(instrumentCounter);
   newInstrumentRow.className = "row";
+  newInstrumentRow.id = "instrument-row-"+instrumentCounter;
   newInstrumentDiv.className = "col-xs-6";
   newInstrumentDiv.setAttribute("id","instrument"+instrumentCounter+"-div")
   newInstrumentLabel.htmlFor = "instrument-item"+instrumentCounter;
@@ -191,7 +190,6 @@ function addInstrument(){
   newInstrumentInput.placeholder = "Instrument name."
   newInstrumentInput.id = "instrument-item"+instrumentCounter;
   newInstrumentInput.className="form-control";
-
 
   newYearsDiv.className = "col-xs-3";
   newYearsDiv.setAttribute("id","instrument"+instrumentCounter+"-years-div");
@@ -217,9 +215,11 @@ function addInstrument(){
 }
 
 function removeLatestInstrument(){
-  var currentInstrumentDiv = document.getElementById("instrument"+instrumentCounter+"-div");
-  var currentYearsDiv = document.getElementById("instrument"+instrumentCounter+"-years-div");
-  currentInstrumentDiv.remove();
-  currentYearsDiv.remove();
-
+  var instrumentRow = document.getElementById("instrument-row-"+instrumentCounter);
+  if(instrumentCounter == 1){
+    window.alert("Minimum number of secondary instrument is 1");
+  }else{
+    instrumentRow.remove();
+    instrumentCounter -= 1;
+  }
 }

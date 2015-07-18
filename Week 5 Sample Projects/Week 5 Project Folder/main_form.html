@@ -31,8 +31,6 @@
     </div>
   </nav>
 
-
-
   <body onload="init()">
     <datalist id="instrument-voice-list">
       <optgroup label="Female Voices">
@@ -392,46 +390,27 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-6 col-md-4">
-                      <label for="instrument-voice-item2">Instrument/Voice</label>
-                      <input id="instrument-voice-item2" type="text" list="instrument-voice-list" placeholder="Voice Type or Instrument" class="form-control" title="Please enter your voice type or instrument."/>
-                    </div>
-                    <div class="col-xs-6 col-md-2">
-                      <label for="years-item2">No. of Years:</label><br/>
-                      <input id="years-item2" type="number" min="1" max="90" value="1" class="form-control"/>
-                    </div>
-                    <div class="col-xs-12 col-md-3">
-                      <label for="teachers-name-item2">Teacher's Name</label>
-                      <input type="text" id="teachers-name-item2" placeholder="Name" class="form-control" title="Please enter your teacher's full name"/>
-                    </div>
-                    <div class="col-xs-12 col-md-3">
-                      <label for="teachers-email-item2">Teacher's Email</label>
-                      <input type="email" id="teachers-email-item2" placeholder="Email" title="Please type in your teacher's email." class="form-control">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-6 col-md-4">
-                      <label for="instrument-voice-item3">Instrument/Voice</label>
-                      <input id="instrument-voice-item3" type="text" list="instrument-voice-list" placeholder="Voice Type or Instrument" class="form-control" title="Please type your voice type or instrument."/>
-                    </div>
-                    <div class="col-xs-6 col-md-2">
-                      <label for="years-item3">No. of Years:</label><br/>
-                      <input id="years-item3" type="number" min="1" max="90" value="1" class="form-control"/>
-                    </div>
-                    <div class="col-xs-12 col-md-3">
-                      <label for="teachers-name-item3">Teacher's Name</label>
-                      <input type="text" id="teachers-name-item3" placeholder="Name" class="form-control" title="Please type in your teacher's full name"/>
-                    </div>
-                    <div class="col-xs-12 col-md-3">
-                      <label for="teachers-email-item3">Teacher's Email</label>
-                      <input type="email" id="teachers-email-item3" placeholder="Email" title="Please type in your teacher's email." class="form-control">
-                    </div>
+                      <div class="col-xs-6 col-md-4">
+                        <label for="instrument-voice-item2">Instrument/Voice</label>
+                        <input id="instrument-voice-item2" type="text" list="instrument-voice-list" placeholder="Voice Type or Instrument" class="form-control" title="Please enter your voice type or instrument."/>
+                      </div>
+                      <div class="col-xs-6 col-md-2">
+                        <label for="years-item2">No. of Years:</label><br/>
+                        <input id="years-item2" type="number" min="1" max="90" value="1" class="form-control"/>
+                      </div>
+                      <div class="col-xs-12 col-md-3">
+                        <label for="teachers-name-item2">Teacher's Name</label>
+                        <input type="text" id="teachers-name-item2" placeholder="Name" class="form-control" title="Please enter your teacher's full name"/>
+                      </div>
+                      <div class="col-xs-12 col-md-3">
+                        <label for="teachers-email-item2">Teacher's Email</label>
+                        <input type="email" id="teachers-email-item2" placeholder="Email" title="Please type in your teacher's email." class="form-control">
+                      </div>
                   </div>
                 </div>
-                <div id="edit-instrument-voice-fields">
-                  <button class="btn btn-primary" onclick="addNewPrivateLessonField()">Add</button>
-                  <button class="btn btn-danger" onclick="removeLatestPrivateLessonField()">Remove Latest</button>
-                </div>
+              <div id="add-private-lesson-div">
+                <button type="button" class="btn btn-primary" onclick="addNewPrivateLessonField()">Add</button>
+                <button type="button" class="btn btn-danger" onclick="removeLatestPrivateLessonField()">Remove Latest</button>
               </div>
               <div>
                 <h4>Other Musical Skills:</h4>
@@ -515,32 +494,13 @@
                             <input type="number" min="1" max="90" value="1" id="instrument-item1-years" title="Please indicate the number of years of experience you have with the instrument." class="form-control">
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col-xs-6">
-                            <label for="instrument-item2" class="control-label">Instrument 2:</label>
-                            <input type="text" title="Please type the instrument's name" placeholder="Instrument Name" id="instrument-item2" class="form-control">
-                          </div>
-                          <div class="col-xs-3">
-                            <label for="instrument-item2-years" class="control-label">Number of Years:</label>
-                            <input type="number" min="1" max="90" value="1" id="instrument-item2-years" title="Please indicate the number of years of experience you have with the instrument." class="form-control">
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-xs-6">
-                            <label for="instrument-item3" class="control-label">Instrument 3:</label>
-                            <input type="text" title="Please type the instrument's name" placeholder="Instrument Name" id="instrument-item3" class="form-control">
-                          </div>
-                          <div class="col-xs-3">
-                            <label for="instrument-item3-years" class="control-label">Number of Years:</label>
-                            <input type="number" min="1" max="90" value="1" id="instrument-item3-years" title="Please indicate the number of years of experience you have with the instrument." class="form-control">
-                          </div>
-                        </div>
                       </fieldset>
-                    <div id="edit-instrument-int-div">
-                      <button class="btn btn-primary" onclick="addInstrument()">Add Instrument</button>
-                      <button class="btn btn-danger" onclick="removeLatestInstrument()">Remove Latest Instrument</button>
+                      <div id="add-other-instruments-div">
+                        <button type="button" class="btn btn-primary" onclick="addInstrument()">Add Instrument</button>
+                        <button type="button" class="btn btn-danger" onclick="removeLatestInstrument()">Remove Latest Instrument</button>
+                      </div>
                     </div>
-                    </div>
+
                   </div>
                   <div class="row">
                     <div class="col-xs-12">
