@@ -27,6 +27,7 @@ textarea{
 }
 
 #add-private-lesson-div,
-#add-other-instruments-div{
+#add-other-instruments-div,
+#submit-form-btn{
   padding-top: 1%;
 }

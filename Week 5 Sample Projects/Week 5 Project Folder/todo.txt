@@ -1,4 +1,4 @@
 Todo:
 1) Fix add private classes DONE
 2) Fix add instrument DONE
-3) Clean layout
+3) Clean layout DONE

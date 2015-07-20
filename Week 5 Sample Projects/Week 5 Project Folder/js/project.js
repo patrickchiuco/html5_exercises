@@ -80,7 +80,7 @@ function showYears(id){
         other_desc.style.display = "block" ;
         other_desc.focus();
       }
-      years_div.className="col-xs-12 col-md-4";
+      years_div.className="col-xs-7 col-md-3";
     }else{
       if(id == "other"){
         var other_desc = document.getElementById("mback-other-desc");
