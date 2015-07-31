@@ -1,0 +1,37 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/project.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/project.js"></script>
+</head>
+<body id="document-body">
+
+  <video id="video-footage" height="300" width="400" preload="auto" controls="controls">
+    <source src="footage/mallard.mp4" type="video/mp4"/>
+  </video>
+
+  <canvas id="video-canvas" height="300" width="400">
+  </canvas>
+  <button id="render-video" type="button">Render</button>
+  <button id="pause-video" type="button">Pause</button>
+  <button id="restart-video" type="button">Restart</button>
+  <select id="filter-select">
+    <option value="default">Default</option>
+    <option value="grayscale">Grayscale</option>
+    <option value="sepia">Sepia</option>
+    <option value="blur">Blur</option>
+  </select>
+  <label for="first_name">
+      <span lang=en>Your First Name</span>
+      <input id="first_name" type="text" name="fname"/>
+  </label>
+  <input type="button" value="Please submit this: ">
+</body>
+<script>
+   var body_element = document.getElementById("document-body");
+   body_element.onload = init();
+</script>
+</html>
