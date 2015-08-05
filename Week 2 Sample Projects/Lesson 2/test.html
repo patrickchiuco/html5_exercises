@@ -8,13 +8,16 @@
       #source{
         text-decoration: none;
       }
-
       section h2{
         text-align: center;
       }
       .row{
         margin-top:1.8%;
         margin-bottom: 1.8%;
+      }
+
+      #switch-rc th, #switch-rc td{
+        padding: 5px;
       }
     </style>
     <script src="js/jquery.min.js"></script>
@@ -25,7 +28,6 @@
         var newText = text.replace(/red|blue|green/g, function placeStyle(x){
           return '<div style="color:'+x+';">'+x+'</div>';
         });
-        console.log(newText.trim());
         $("#target span").html(newText.trim());
       });
 
@@ -79,7 +81,6 @@
       $("#blink-button").on("click", function(){
         setInterval(function(){
           var blinkDiv = $("#blink-div");
-          console.log("Hello");
             if(blinkDiv.css('background-color') == 'rgb(255, 192, 203)'){
               blinkDiv.css('background-color','red');
             }else{
@@ -88,8 +89,49 @@
         },200);
       });
 
-});
+        $("#switch-rows-cols").on("click",function(){
+          var rows = [];
+          $("#switch-rc tbody tr").each(function(){
+            rows.push($(this)[0]);
+          });
+          console.log(rows[0].children[1]);
+          var colSwitch = 0;
+          var cols = "";
+          var g = $("#switch-rc tbody");
+          var tr;
+          for(var i = 0; i<4; i++){
+            console.log("I: "+i);
+            tr = $("<tr/>").appendTo(g);
+            var col1 = rows[0].children[0];
+            var col2 = rows[1].children[0];
+            var col3 = rows[2].children[0];
+            var col4 = rows[3].children[0];
+            tr.append(col1);
+            tr.append(col2);
+            tr.append(col3);
+            tr.append(col4);
+            //console.log(g);
+            /*cols += "<tr><" + col1.tagName+" style='" + col1.style + "''>"+col1.textContent + "</" + col1.tagName+"><" +
+                    col2.tagName + ">" + col2.textContent + "</" + col2.tagName+"><" + col3.tagName+">" +
+                    col3.textContent + "</" + col3.tagName+"><" + col4.tagName+">" + col4.textContent+"</" + col4.tagName + ">";*/
+          }
+      });
 
+      $("#format-value").on("click",function(){
+        var currValue = $("#value-to-format").val();
+        var formatedValue = "";
+        for(var x = currValue.length-1;x>=0;--x){
+          formatedValue = currValue.charAt(x)+formatedValue;
+          if(x == 0){
+
+          }else if(x%3 == 0){
+              formatedValue = ","+formatedValue;
+          }
+        }
+        $("#value-to-format").val(formatedValue);
+      });
+
+});
     </script>
   </head>
   <body>
@@ -174,13 +216,13 @@
         </section>
         <section class="col-xs-12 col-md-6">
           <h2>Switch Rows and Columns</h2>
-          <table>
+          <table id="switch-rc">
             <tbody>
               <tr>
-                <th>th1</th>
-                <th>th2</th>
-                <th>th3</th>
-                <th>th4</th>
+                <th style="padding: 5px; border: 1px solid rgb(119, 119, 119); background: rgb(221, 255, 0);">th1</th>
+                <th style="padding: 5px; border: 1px solid rgb(119, 119, 119); background: rgb(221, 255, 0);">th2</th>
+                <th style="padding: 5px; border: 1px solid rgb(119, 119, 119); background: rgb(221, 255, 0);">th3</th>
+                <th style="padding: 5px; border: 1px solid rgb(119, 119, 119); background: rgb(221, 255, 0);">th4</th>
               </tr>
               <tr>
                 <td>1-1</td>
@@ -202,6 +244,14 @@
               </tr>
             </tbody>
           </table>
+          <button id="switch-rows-cols" type="button">Switch Rows and Cols</button>
+        </section>
+      </div>
+      <div class="row">
+        <section id="number-format-div" class="col-xs-12 col-sm-6">
+          <h2>Number Format</h2>
+          <input id="value-to-format" type="text" value="123456789">
+          <button id="format-value" type="button">Format Value</button>
         </section>
       </div>
       </main>
