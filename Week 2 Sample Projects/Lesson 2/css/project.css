@@ -1,0 +1,62 @@
+#video-element{
+  margin: 10px;
+  padding: 10px;
+}
+
+#collapseVideoPlaylist{
+  width: 100%;
+  height: 100px;
+}
+
+.video-playlist{
+  width: 100%;
+
+}
+
+.video-poster{
+  width: 30%;
+}
+
+.video-thumbnail{
+  margin-top: 3%;
+}
+
+.button-div{
+  margin: 5% 0;
+}
+
+.carousel-inner,
+.carousel-control.left,
+.carousel-control.right{
+  padding: 4%;
+}
+
+.carousel-inner>.item.active, .carousel-inner>.item.next.left, .carousel-inner>.item.prev.right{
+  left: 55 !important;
+}
+/* Removes the default 20px margin and creates some padding space for the indicators and controls */
+.carousel {
+    margin-bottom: 0;
+	   /*padding: 0 40px 30px 40px;*/
+}
+/* Reposition the controls slightly */
+.carousel-control {
+	left: -12px;
+}
+.carousel-control.right {
+	right: -12px;
+}
+/* Changes the position of the indicators */
+.carousel-indicators {
+	right: 50%;
+	top: auto;
+	bottom: 0px;
+	margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.carousel-indicators li {
+	background: #c0c0c0;
+}
+.carousel-indicators .active {
+background: #333333;
+}

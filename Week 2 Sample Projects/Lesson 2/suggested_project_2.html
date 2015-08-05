@@ -1,0 +1,129 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Video and Audio Player</title>
+  <link rel="stylesheet" href="css/project.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jssor.slider.min.js"></script>
+  <script src="js/project.js"></script>
+  <script>
+
+  </script>
+</head>
+<body class="container" onload="init()">
+  <h1 class="jumbotron text-center">Video and Audio Player with Playlist</h1>
+  <!--Video-->
+  <section class="col-xs-12 col-md-6">
+    <h2 class="text-center">Video Player</h2>
+    <h3 id="name-of-video" class="text-center"></h3>
+    <video id="video-element" width="100%" height="300" preload="auto">
+      <source src="footage/mallard.mp4" type="video/mp4">
+      <source src="" type="video/webm">
+      <source src="" type="video/ogg">
+    </video>
+    <div class="collapse col-xs-12 clearfix" id="collapseVideoPlaylist">
+      <div class="row">
+           <div class="col-xs-12">
+              <div class="">
+                <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+
+                <div class="item active">
+                  <div class="row-fluid">
+                    <div class="col-md-3"><a id="mallard-thumb" onclick="loadVideo('Mallard')" class="thumbnail video-thumbnail"><img src="images/mallard-thumb.png" alt="Image" style="max-width:100%;" /></a></div>
+                    <div class="col-md-3"><a id="bird-thumb" onclick="loadVideo('Bird')" class="thumbnail video-thumbnail"><img src="images/bird-thumb.png" alt="Image" style="max-width:100%;" /></a></div>
+                    <div class="col-md-3"><a id="bridge-thumb" onclick="loadVideo('Bridge')" class="thumbnail video-thumbnail"><img src="images/bridge-thumb.png" alt="Image" style="max-width:100%;" /></a></div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="row-fluid">
+                    <div class="col-md-3"><a id="clownfish-thumb" onclick="loadVideo('Clownfish')" class="thumbnail video-thumbnail"><img src="images/clownfish-thumb.png" alt="Image" style="max-width:100%;" /></a></div>
+                    <div class="col-md-3"><a id="forest-thumb" onclick="loadVideo('Forest')" class="thumbnail video-thumbnail"><img src="images/forest-thumb.png" alt="Image" style="max-width:100%;" /></a></div>
+                    <div class="col-md-3"><a id="squirrel-thumb" onclick="loadVideo('Squirrel')" class="thumbnail video-thumbnail"><img src="images/squirrel-thumb.png" alt="Image" style="max-width:100%;" /></a></div>
+                  </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+                </div><!--/myCarousel-->
+
+              </div><!--/well-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style=""></div>
+    <div class="text-center button">
+      <button id="playvideo" type="button" class="btn btn-success">
+        <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+      </button>
+      <button id="stopvideo" type="button" class="btn btn-danger">
+        <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+      </button>
+      <button id="prevvideo" type="button" class="btn btn-primary">
+        <span class="glyphicon glyphicon-step-backward"></span>
+      </button>
+      <button id="nextvideo" type="button" class="btn btn-primary">
+        <span class="glyphicon glyphicon-step-forward"></span>
+      </button>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseVideoPlaylist"
+      aria-expanded="false" aria-controls="collapseVideoPlaylist">
+        <span class="glyphicon glyphicon-list"></span>
+      </button>
+    </div>
+  </section>
+
+  <!--Audio-->
+  <section class="col-xs-12 col-md-6">
+    <h2 class="text-center">Audio Player</h2>
+    <h3 id="name-of-audio" class="text-center"></h3>
+    <audio id="audio-element" preload="none" class="center-block" controls>
+      <source src="sounds/dog.mp3" type="audio/mpeg">
+      <source src="" type="audio/mp4">
+      <source src="" type="audio/webm">
+    </audio>
+    <section id="collapseAudioPlaylist" class="collapse col-xs-12">
+      <ul>
+        <li><a onclick="loadAudio('Dog')">Dog</a></li>
+        <li><a onclick="loadAudio('Barnowl')">Barnowl</a></li>
+        <li><a onclick="loadAudio('Bees')">Bees</a></li>
+        <li><a onclick="loadAudio('Dolphin')">Dolphin</a></li>
+        <li><a onclick="loadAudio('Elephant')">Elephant</a></li>
+      </ul>
+    </section>
+    <div class="text-center">
+      <section id="collapseAudioPlaylist" class="collapse">
+        <div class="well">
+          Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod.
+          Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+          Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus
+          mollis interdum.
+        </div>
+      </section>
+      <button id="playaudio" type="button" class="btn btn-success">
+        <span class="glyphicon glyphicon-play" aria-hidden="false"></span>
+      </button>
+      <button id="stopaudio" type="button" class="btn btn-danger">
+        <span class="glyphicon glyphicon-pause"></span>
+      </button>
+      <button id="prevaudio" type="button" class="btn btn-primary">
+        <span class="glyphicon glyphicon-step-backward"></span>
+      </button>
+      <button id="nextaudio" type="button" class="btn btn-primary">
+        <span class="glyphicon glyphicon-step-forward"></span>
+      </button>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAudioPlaylist"
+      aria-expanded="false" aria-controls="collapseAudioPlaylist">
+        <span class="glyphicon glyphicon-list"></span>
+      </button>
+    </div>
+  </section>
+
+</body>
+</html>
