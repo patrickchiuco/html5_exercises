@@ -4,19 +4,52 @@
     <title=></title>
     <meta charset="utf-8"></meta>
     <style>
-      #canvas-practice{
+      #canvas-practice,#canvas2{
         border: 1px solid black;
+        position: relative;
+        /*left: 37.75em;
+        bottom: 17.55em;*/
       }
+      .offscreen{
+        position: absolute;
+        clip: rect(1px 1px 1px 1px); /* for Internet Explorer */
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+      }
+
     </style>
     <!--TODO: Insert polyfill here-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    <script src="js/jquery.min.js">
     </script>
     <script src="js/modernizr.js"></script>
     <script>
+
       $(function(){
         //get current canvas and request context
-        var current_canvas = $("#canvas-practice")[0];
+        /*var current_canvas = $("#canvas-practice")[0];
         var ctx = current_canvas.getContext('2d');
+        var video = $("#test-video2")[0];*/
+
+        var canvas2 = $("#canvas2")[0];
+        var ctx2 = canvas2.getContext('2d');
+        ctx2.arc(100,200,50,0,2*Math.PI);
+        ctx2.fill()
+        //ctx2.fillStyle = "#722f37";
+        /*ctx2.fillStyle = "rgba(114,47,55,0.6)";
+        ctx2.fill();
+        ctx2.beginPath();
+        ctx2.arc(400,400,50,0,2*Math.PI);
+        ctx2.lineWidth = 5;
+        ctx2.strokeStyle = "#4b5320";
+        ctx2.stroke();
+        /*video.onplay = function(){
+          setInterval(function(){ctx.drawImage(video,0,0,320,180);},25);
+        }
+
         /**
         //basic rectangle
         ctx.fillStyle = "red";
@@ -38,11 +71,31 @@
         /**
           Draw flags with 3 colours on a canvas
         **/
-        ctx.font = "40px Arial";
-        ctx.fillStyle = "black";
+        //ctx.font = "40px Arial";
+        //ctx.fillStyle = "black";
         //ctx.textBaseline = "bottom";
-        ctx.textAlign = "end";
-        ctx.fillText("Hello not so young people",20,50);
+        //ctx.textAlign = "end";
+        //ctx.fillText("Hello not so young people",20,50);
+
+        /*ctx2.moveTo(0,150);
+        ctx2.strokeStyle = "#FF0000";
+        for(var x = 0; x<=600;x += 10){
+          ctx2.lineTo(x,150);
+        }
+        ctx2.stroke();
+*/
+        /*ctx2.beginPath();
+        //ctx2.moveTo(0,200);
+        ctx2.fillStyle = "#107c10";
+        for(var x = 0; x<=600; x+=10){
+          ctx2.lineTo(x,200);
+        }
+        ctx2.lineTo(900,300);
+        for(var x=900; x>=0; x-=10){
+          ctx2.lineTo(x,300);
+        }
+        ctx2.lineTo(0,200);
+        ctx2.fill();*/
         /*
         Draw flag
         for(var y = 200; y<500;y+=110){
@@ -77,18 +130,82 @@
             }
           }
         }*/
-        var imageObj = new Image();
-        imageObj.onload = function(){
-          ctx.drawImage(imageObj,0,0);
+        //var imageObj = $("#test-img")[0];
+        //ctx.drawImage(imageObj,0,0);
+        //imageObj.src = "img/starry-night.jpg";
+        /*
+        var deutsch_flage = ctx2.createLinearGradient(0,0,900,0);
+        deutsch_flage.addColorStop(0,"black");
+        deutsch_flage.addColorStop(0.5,"red");
+        deutsch_flage.addColorStop(1,"yellow");
+        ctx2.fillStyle = deutsch_flage;
+        ctx2.fillRect(0,0,900,600);
+        */
+        /*
+        var art = ctx2.createRadialGradient(450,300,50,450,300,200);
+        art.addColorStop(0,"red");
+        art.addColorStop(0.33,"green");
+        art.addColorStop(0.66,"blue");
+        art.addColorStop(0.99,"yellow");
+        ctx2.fillStyle = art;
+        ctx2.fillRect(0,0,900,600);
+        */
+        /*
+        var imgObj = new Image();
+        imgObj.src = "img/starry-night.jpg";
+        imgObj.onload = function(){
+          var van_gogh = ctx2.createPattern(imgObj,"repeat");
+          ctx2.fillStyle = van_gogh;
+          ctx2.fillRect(00,0,9000,6000);
         }
-        imageObj.src = "img/starry-night.jpg";
+
+        */
+        ctx2.save();
+        ctx2.arc(300,400,100,0,Math.PI*2);
+        ctx2.fillStyle = "lightBlue";
+        ctx2.shadowColor = "grey";
+        ctx2.shadowBlur = 10;
+        ctx2.shadowOffsetX = 15;
+        ctx2.shadowOffsetY = 15;
+        ctx2.fill();
+        ctx2.restore();
+        ctx2.beginPath();
+        ctx2.arc(300,400,100,0,Math.PI*2);
+        ctx2.strokeStyle = "black";
+        ctx2.lineWidth = 10;
+        ctx2.stroke();
+
+        ctx2.save();
+        ctx2.beginPath();
+        ctx2.moveTo(450,400);
+        ctx2.lineTo(800,400);
+        ctx2.lineTo(400,500);
+        ctx2.lineWidth = 10;
+        ctx2.miterLimit = 1;
+        ctx2.lineCap =1;
+        ctx2.lineJoin = "miter";
+        ctx2.stroke();
+        ctx2.restore();
+
+
       });
     </script>
 </head>
 <body>
   <main>
-    <canvas id="canvas-practice" height="600" width="900">
 
+    <!---<img id="test-img" src="img/starry-night.jpg"></img>-->
+
+    <!--<canvas id="canvas-practice" height="100" width="200">
+
+    </canvas>
+    <video id="test-video" controls="controls" preload="auto" width="600" height="900" loop>
+      <source src="video/forest.mp4" type="video/mp4">
+    </video>
+    <video id="test-video2"  autoplay="autoplay" controls="controls" class="offscreen">
+      <source src="video/mallard.mp4" type="video/mp4">
+    </video>-->
+    <canvas id="canvas2" height="600" width="900">
     </canvas>
   </main>
 </body>
